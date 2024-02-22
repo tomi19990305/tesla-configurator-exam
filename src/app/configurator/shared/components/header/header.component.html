@@ -1,0 +1,10 @@
+<button
+    *ngFor="let step of navigationSteps; index as i"
+    id="step{{ i + 1 }}"
+    routerLinkActive="active-step"
+    [routerLink]="step.routerLink"
+    [routerLinkActiveOptions]="{ exact: true }"
+    [disabled]="step.disabled"
+>
+    {{ step.label }}
+</button>

@@ -1,0 +1,12 @@
+.summary-grid {
+    display: grid;
+    grid-template-columns: 35rem auto;
+    padding-left: 1rem;
+    padding-bottom: 1rem;
+
+    .total-cost-border {
+        padding: 0.5rem 0;
+        border-top: grey solid 1px;
+        border-bottom: grey solid 1px;
+    }
+}

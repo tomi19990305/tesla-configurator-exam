@@ -1,0 +1,21 @@
+<div *ngIf="summary">
+    <h2>Your Tesla {{ summary.carModelDescription }}</h2>
+    <div class="summary-grid">
+      <div><b>{{ summary.optionConfigModel.description }}</b></div>
+        <div>{{ summary.carConfigPrice | currency }}</div>
+        <div>{{ summary.optionConfigModel | optionConfig: false }}</div>
+        <div></div>
+        <div><b>{{ summary.carColorDescription }}</b></div>
+        <div>{{ summary.carColorPrice | currency }}</div>
+        <ng-container *ngIf="summary.includeTow">
+            <div><b>Tow Hitch Package</b></div>
+            <div>{{ summary.towPrice | currency }}</div>
+        </ng-container>
+        <ng-container *ngIf="summary.includeYoke">
+            <div><b>Yoke Steering Wheel Package</b></div>
+            <div>{{ summary.yokePrice | currency }}</div>
+        </ng-container>
+        <div class="total-cost-border"><b>TOTAL COST</b></div>
+        <div class="total-cost-border">{{ summary.totalCost | currency }}</div>
+    </div>
+</div>

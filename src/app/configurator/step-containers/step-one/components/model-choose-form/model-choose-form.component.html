@@ -1,0 +1,14 @@
+<form [formGroup]="carModelForm">
+    <label for="modelSelect">Model:</label>
+    <select id="modelSelect" formControlName="carCode">
+        <option value="null" disabled selected>Choose...</option>
+        <option *ngFor="let car of carModelOptions" [value]="car.code">{{ car.description }}</option>
+    </select>
+
+    <ng-container *ngIf="carModelForm.get('carCode')?.value">
+        <label for="colorSelect">Color:</label>
+        <select id="colorSelect" formControlName="carColorCode">
+            <option *ngFor="let color of selectedCarColors" [value]="color.code">{{ color.description }}</option>
+        </select>
+    </ng-container>
+</form>

@@ -1,0 +1,19 @@
+<form *ngIf="carOptions" [formGroup]="carOptionsForm">
+    <label for="configSelect">Config:</label>
+    <select id="configSelect" formControlName="configSelect">
+        <option value="null" disabled selected>Choose...</option>
+        <option *ngFor="let config of carOptions.configs" [value]="config.id">{{ config.description }}</option>
+    </select>
+
+    <div *ngIf="selectedCarConfig" class="config-description">{{ selectedCarConfig | optionConfig }}</div>
+
+    <div *ngIf="carOptions.towHitch">
+        <label for="includeYoke">Tow hitch:</label>
+        <input type="checkbox" id="includeYoke" formControlName="includeYoke" />
+    </div>
+
+    <div *ngIf="carOptions.yoke">
+        <label for="includeTow">Yoke steering wheel:</label>
+        <input type="checkbox" id="includeTow" formControlName="includeTow" />
+    </div>
+</form>
